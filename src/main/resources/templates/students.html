@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>students</title>
+    <style>
+        #table {
+            display: flex;
+            justify-content: center;
+        }
+        .but {
+            display: flex;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+<div id="table">
+    <table>
+        <thead>
+        <tr>
+            <th>id</th>
+            <th>name</th>
+            <th>email</th>
+            <th>password</th>
+            <th>delete</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="student : ${allStudents}">
+            <td th:text="${student.id}"></td>
+            <td th:text="${student.name}"></td>
+            <td th:text="${student.email}"></td>
+            <td th:text="${student.password}"></td>
+            <td>
+                <a th:href="@{'/api/students/delete/' + ${student.id}}">
+                    <button>delete</button>
+                </a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+<div class="but">
+    <a th:href="@{/api/students/save/page}">
+        <button>new</button>
+    </a>
+</div>
+
+<br>
+<div class="but">
+    <a th:href="@{/logout}">
+        <button>logout</button>
+    </a>
+</div>
+</body>
+</html>

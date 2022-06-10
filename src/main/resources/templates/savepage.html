@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>save page</title>
+    <style>
+        #savepage {
+            display: flex;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+<div id="savepage">
+    <form th:action="@{/api/students/save}" method="post" th:object="${newStudent}">
+        <input type="text" th:field="*{name}" placeholder="name">
+        <br><br>
+        <input type="email" th:field="*{email}" placeholder="email">
+        <br><br>
+        <input type="password" th:field="*{password}" placeholder="password">
+        <br><br>
+        <button type="submit">save</button>
+    </form>
+</div>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>welcome</title>
+    <style>
+        h1 {
+            color: blue;
+            text-align: center;
+        }
+
+    </style>
+</head>
+<body>
+<h1>
+    Welcome to, Peaksoft
+</h1>
+<a th:href="@{/api/students}">
+    <button>students</button>
+</a>
+<div>
+    <a th:href="@{/api/students/save/page}">
+        <button>register</button>
+    </a>
+</div>
+</body>
+</html>
